@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="inicio">
         <h3>Bienvenido, Player#0001!👋</h3>
         <p>¿Listo para jugar y compartir?</p>
         <br>
@@ -16,21 +16,30 @@
             placeholder="🔍Buscar partidas, torneos, jugadores..." />
     </header>
     <hr>
+    <nav>
+        <h4>Barra de navegación</h4>
+        <ol>
+            <li><a href="#noticias-destacadas">Noticias Destacadas</a></li>
+            <li><a href="#comunidad">Comunidad</a></li>
+            <li><a href="#calendario">Calendario</a></li>
+        </ol>
+    </nav>
+    <hr>
     <aside>
         <h1>GameZone</h1>
-        <nav>
-            <ul>Inicio</ul>
-            <ul>Torneos</ul>
-            <ul>Ranking</ul>
-            <ul>Calendario</ul>
-            <ul>Comunidad</ul>
-            <ul>Clips</ul>
-            <ul>Ajustes</ul>
-        </nav>
+        <ul>
+            <li><a href="/index.html" title="Ir al Inicio">Inicio</a></li>
+            <li><a href="/pages/torneos.html" title="Ir a la sección de Torneos">Torneos</a></li>
+            <li><a href="/pages/ranking.html" title="Ir a la sección de Ranking">Ranking</a></li>
+            <li><a href="/pages/calendario.html" title="Ir al Calendario">Calendario</a></li>
+            <li><a href="/pages/comunidad.html" title="Ir a la sección de Comunidad">Comunidad</a></li>
+            <li><a href="/pages/clips.html" title="Ir a la sección de Clips">Clips</a></li>
+            <li><a href="/pages/ajustes.html" title="Ir a los Ajustes">Ajustes</a></li>
+        </ul>
     </aside>
     <hr>
     <main>
-        <section>
+        <section id="noticias-destacadas">
             <h3>Noticias Destacadas</h3>
             <h2>Overwatch weekly torunament</h2>
             <p>Torneo semanal de overwatch</p>
@@ -40,38 +49,38 @@
             <button>Inscribirse</button>
         </section>
         <hr>
-        <section>
+        <section id="comunidad">
             <h2>Comunidad</h2>
             <pre>
 <span style="color: blueviolet;"><u>Para ti</u>    <u>Siguiendo</u>    <u>Discusiones</u>   <u>Clips</u>    <u>Esports</u>               <u>Más recientes</u></span>
             </pre>
-            <section>
+            <div>
                 <h4>ACE ÉPICO</h4>
                 <p>Eran tremendos bots.😴</p>
                 <h5><b>Player#0001</b></h5>
                 <h6>Hace 2 horas</h6>
-            </section>
-            <section>
+            </div>
+            <div>
                 <h4>ACE ÉPICO</h4>
                 <p>Eran tremendos bots.😴</p>
                 <h5><b>Player#0001</b></h5>
                 <h6>Hace 2 horas</h6>
-            </section>
-            <section>
+            </div>
+            <div>
                 <h4>ACE ÉPICO</h4>
                 <p>Eran tremendos bots.😴</p>
                 <h5><b>Player#0001</b></h5>
                 <h6>Hace 2 horas</h6>
-            </section>
-            <section>
+            </div>
+            <div>
                 <h4>ACE ÉPICO</h4>
                 <p>Eran tremendos bots.😴</p>
                 <h5><b>Player#0001</b></h5>
                 <h6>Hace 2 horas</h6>
-            </section>
+            </div>
         </section>
         <hr>
-        <section>
+        <section id="calendario">
             <h4>Septiembre</h4>
             <pre><u>Mo    Tu    We    Th    Fr    Sa    Su</u></pre>
             <pre>27    28    29    30    31     1     2</pre>
@@ -86,8 +95,9 @@
             <br><br>
             <button>21 de Septiembre - Overwatch weekly tournament</button>
         </section>
+        <hr>
+        <a href="#inicio">Regresar a arriba</a>
     </main>
-    <br>
     <hr>
     <footer>
         <p>© GameZone 2026® - Tu página de gaming - DASC</p>
