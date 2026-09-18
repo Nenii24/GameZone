@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <header id="Inicio">
+        <h3>¡Unete a la comunidad!</h3>
+        <p>Registra tus datos para acceder a la plataforma</p>
+        <br>
+    </header>
+
+    <hr>
+    
+    <main>
+        <h2>Formulario de registro</h2>
+
+        <form action="/registro" method="post">
+            <fieldset id="datos-personal">
+                <strong>Datos personales</strong>
+
+                <p>
+                    <label for="nombre">Nombre: </label>
+                    <br>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+                </p>
+
+                <p>
+                    <label for="apellido">Apellido: </label>
+                    <br>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido">
+                </p>
+
+                <p>
+                    <label for="edad">Edad: </label>
+                    <br>
+                    <input type="number" id="edad" name="edad" min="18" max="100">
+                    <br>
+                </p>
+                <p>
+                    <label for="nacionalidad">Nacionalidad</label>
+                    <br>
+                    <input type="text" id="nacionalidad" name="nacionalidad" list="lista-paises" placeholder="Selecciona tu pais">
+                    <datalist id="lista-paises">
+                        <option value="Mexico">
+                        <option value="Estados Unidos">
+                        <option value="Canada">
+                        <option value="Chile">
+                        <option value="Peru"> 
+                    </details>
+                </p>
+
+                <fieldset>
+                    <legend>Sexo: </legend>
+                    <input type="radio" id="sexo-m" name="sexo"m value="masculino">
+                    <label for="sexo-m">Masculino</label>
+                    <br>
+                    <input type="radio" id="sexo-f" name="sexo"m value="femenino">
+                    <label for="sexo-f">Femenino</label>
+                    <br>
+                    <input type="radio" id="sexo-otro" name="sexo"m value="otro">
+                    <label for="sexo-otro">Otro</label>
+                    <br>              
+                </fieldset>   
+            </fieldset>
+
+            <br>
+
+            <fieldset id="datos-cuenta">
+                <strong>Datos de la cuenta</strong>
+
+                <p>
+                    <label for="gamertag">Gamertag: </label>
+                    <input type="text" id="gamertag" placeholder="Ingrese su GameTag">
+                    <br>
+                </p>
+
+                <p>
+                    <label for="correo">Correo Electronico: </label>
+                    <br>
+                    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
+                </p>
+
+                <p>
+                    <label for="password">Cotraseña: </label>
+                    <br>
+                    <input type="password" id="password" name="password" placeholder="********">
+                </p>
+            </fieldset>
+
+            <br>
+
+            <fieldset id="preferencia-juego">
+                <strong>Preferencia de Videojuego</strong>
+
+                <p>
+                    <label for="plataforma">Plataforma Principal</label>
+                    <br>
+                    <select id="plataforma" name="plataforma">
+                        <option value="">Selecciona una opcion</option>
+                        <option value="pc">PC</option>
+                        <option value="switch">Nintendo Switch</option>
+                        <option value="playstation">PlayStation</option>
+                        <option value="xbox">Xbox</option>
+                    </select>
+                </p>
+            </fieldset>
+
+            <br>
+
+            <fieldset id="preferencia-juego">
+                <strong>Genero de videojuegos favoritas</strong>
+                <br>
+                <input type="checkbox" id="gen-pelea" name="generos" value="pelea">
+                <label for="gen-pelea">Pelea</label>
+                <br>
+                <input type="checkbox" id="gen-shooter" name="generos" value="shooter">
+                <label for="gen-shooter">Disparos</label>
+                <br>
+                <input type="checkbox" id="gen-rpg" name="generos" value="rpg">
+                <label for="gen-rpg">RPG</label>
+                <br>
+                <input type="checkbox" id="gen-ritmo" name="generos" value="ritmo">
+                <label for="gen-ritmo">Ritmo</label>
+            </fieldset>
+
+            <br>
+
+            <div>
+                <button type="submit">Registrarte</button>
+            </div>
+
+        </form>
+
+        <hr>
+
+    </main>
+    
+    <hr>
+
+    <footer>
+        <p>© GameZone 2026® - Tu página de gaming - DASC</p>
+    </footer>
+</body>
+
