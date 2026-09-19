@@ -9,9 +9,9 @@
 
 <body>
     <header id="Inicio">
-        <h3>¡Unete a la comunidad!</h3>
+        <a href="/index.html" title="Regresar al inicio">Volver</a>
+        <h3>¡Únete a la comunidad!</h3>
         <p>Registra tus datos para acceder a la plataforma</p>
-        <br>
     </header>
 
     <hr>
@@ -20,8 +20,8 @@
         <h2>Formulario de registro</h2>
 
         <form action="/registro" method="post">
-            <fieldset id="datos-personal">
-                <strong>Datos personales</strong>
+            <section id="datos-personales">
+                <h3>Datos personales</h3>
 
                 <p>
                     <label for="nombre">Nombre: </label>
@@ -54,7 +54,7 @@
                     </details>
                 </p>
 
-                <fieldset>
+                <section id="sexo">
                     <legend>Sexo: </legend>
                     <input type="radio" id="sexo-m" name="sexo"m value="masculino">
                     <label for="sexo-m">Masculino</label>
@@ -65,55 +65,54 @@
                     <input type="radio" id="sexo-otro" name="sexo"m value="otro">
                     <label for="sexo-otro">Otro</label>
                     <br>              
-                </fieldset>   
-            </fieldset>
+                </section>   
+            </section>
 
             <br>
 
-            <fieldset id="datos-cuenta">
-                <strong>Datos de la cuenta</strong>
+            <section id="datos-cuenta">
+                <h3>Datos de la cuenta</h3>
 
                 <p>
                     <label for="gamertag">Gamertag: </label>
-                    <input type="text" id="gamertag" placeholder="Ingrese su GameTag">
+                    <input type="text" id="gamertag" placeholder="Ingrese su Gamertag">
                     <br>
                 </p>
 
                 <p>
-                    <label for="correo">Correo Electronico: </label>
+                    <label for="correo">Correo electrónico: </label>
                     <br>
                     <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
                 </p>
 
                 <p>
-                    <label for="password">Cotraseña: </label>
+                    <label for="password">Contraseña: </label>
                     <br>
                     <input type="password" id="password" name="password" placeholder="********">
                 </p>
-            </fieldset>
+            </section>
 
             <br>
 
-            <fieldset id="preferencia-juego">
-                <strong>Preferencia de Videojuego</strong>
-
+            <section id="preferencia-juego">
+                <h3>Preferencia de Videojuegos</h3>
                 <p>
                     <label for="plataforma">Plataforma Principal</label>
                     <br>
                     <select id="plataforma" name="plataforma">
-                        <option value="">Selecciona una opcion</option>
+                        <option value="">Selecciona una opción</option>
                         <option value="pc">PC</option>
                         <option value="switch">Nintendo Switch</option>
                         <option value="playstation">PlayStation</option>
                         <option value="xbox">Xbox</option>
                     </select>
                 </p>
-            </fieldset>
+            </section>
 
             <br>
 
-            <fieldset id="preferencia-juego">
-                <strong>Genero de videojuegos favoritas</strong>
+            <section id="preferencia-juego">
+                <h3>Género de videojuegos preferidos</h3>
                 <br>
                 <input type="checkbox" id="gen-pelea" name="generos" value="pelea">
                 <label for="gen-pelea">Pelea</label>
@@ -126,7 +125,13 @@
                 <br>
                 <input type="checkbox" id="gen-ritmo" name="generos" value="ritmo">
                 <label for="gen-ritmo">Ritmo</label>
-            </fieldset>
+                <br>
+                <input type="checkbox" id="gen-accion" name="generos" value="accion">
+                <label for="gen-accion">Accion</label>
+                <br>
+                <input type="checkbox" id="gen-plataformeros" name="generos" value="plataformeros">
+                <label for="gen-plataformeros">Plataformeros</label>
+            </section>
 
             <br>
 
@@ -135,8 +140,6 @@
             </div>
 
         </form>
-
-        <hr>
 
     </main>
     
