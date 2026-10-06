@@ -25,8 +25,6 @@
     <link href="https://fonts.cdnfonts.com/css/tahoma" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
 
-
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -47,177 +45,174 @@
 </head>
 
 <body>
-    <header id="inicio">
+    <header class="inicio" id="inicio">
         <h1>¡Bienvenido, a UltiHub!👋</h1>
         <h2>¿Listo para jugar y compartir?</h2>
-        <input size="40" type="text" id="busqueda" name="busqeda"
+        <input class="inicio__busqueda" size="40" type="text" id="busqueda" name="busqeda"
             placeholder="🔍Buscar partidas, torneos, jugadores..." />
         <br>
-        <button>Iniciar sesión</button>
-        <button><a href="/pages/registro.html" title="Ir al formulario de registro">Registrarse</a></button>
+        <button class="inicio__btn">Iniciar sesión</button>
+        <button class="inicio__btn"><a href="/pages/registro.html" title="Ir al formulario de registro">Registrarse</a></button>
     </header>
 
-    <aside id="barra-lateral">
-        <!-- <img src="assets/img/logotipo-ultihub.svg" alt="logo-ultihub" width="180px" loading="lazy"> -->
-        <img src="assets/img/logotipo-ultihub-sin-fondo.svg" alt="logo-ultihub" width="180px" loading="lazy">
+    <aside class="barra-lateral">
+        <img class="barra-lateral__logo" src="assets/img/logotipo-ultihub-sin-fondo.svg" alt="logo-ultihub" width="180px" loading="lazy">
 
-        <ul>
-            <li><a href="/index.html" title="Ir al Inicio">Inicio</a></li>
-            <li><a href="/pages/torneos.html" title="Ir a la sección de Torneos">Torneos</a></li>
-            <li><a href="/pages/ranking.html" title="Ir a la sección de Ranking">Ranking</a></li>
-            <li><a href="/pages/calendario.html" title="Ir al Calendario">Calendario</a></li>
-            <li><a href="/pages/comunidad.html" title="Ir a la sección de Comunidad">Comunidad</a></li>
-            <li><a href="/pages/clips.html" title="Ir a la sección de Clips">Clips</a></li>
-            <li><a href="/pages/ajustes.html" title="Ir a los Ajustes">Ajustes</a></li>
+        <ul class="barra-lateral__menu">
+            <li class="barra-lateral__item"><a href="/index.html" title="Ir al Inicio">Inicio</a></li>
+            <li class="barra-lateral__item"><a href="/pages/torneos.html" title="Ir a la sección de Torneos">Torneos</a></li>
+            <li class="barra-lateral__item"><a href="/pages/ranking.html" title="Ir a la sección de Ranking">Ranking</a></li>
+            <li class="barra-lateral__item"><a href="/pages/calendario.html" title="Ir al Calendario">Calendario</a></li>
+            <li class="barra-lateral__item"><a href="/pages/comunidad.html" title="Ir a la sección de Comunidad">Comunidad</a></li>
+            <li class="barra-lateral__item"><a href="/pages/clips.html" title="Ir a la sección de Clips">Clips</a></li>
+            <li class="barra-lateral__item"><a href="/pages/ajustes.html" title="Ir a los Ajustes">Ajustes</a></li>
         </ul>
     </aside>
 
     <main>
-        <article id="noticias-destacadas">
-            <h2>Noticias Destacadas</h2>
-            <h3>Overwatch weekly tournament</h3>
-            <p>Torneo semanal de overwatch</p>
-            <ul>21 Octubre - 13:00 hr</ul>
-            <ul>10/20 participantes</ul>
-            <ul>Plataformas</ul>
-            <button>Inscribirse</button>
+        <article class="noticias-destacadas">
+            <h2 class="noticias-destacadas__titulo">Noticias Destacadas</h2>
+            <h3 class="noticias-destacadas__subtitulo">Overwatch weekly tournament</h3>
+            <p class="noticias-destacadas__descripcion">Torneo semanal de overwatch</p>
+            <ul class="noticias-destacadas__lista">21 Octubre - 13:00 hr</ul>
+            <ul class="noticias-destacadas__lista">10/20 participantes</ul>
+            <ul class="noticias-destacadas__lista">Plataformas</ul>
+            <button class="noticias-destacadas__btn">Inscribirse</button>
         </article>
 
-        <section id="comunidad">
+        <section class="comunidad" id="comunidad">
             <h2>Comunidad</h2>
-            <nav id="buttons">
-                <button class="btn-comunidad">Para ti</button>
-                <button class="btn-comunidad">Siguiendo</button>
-                <button class="btn-comunidad">Discusiones</button>
-                <button class="btn-comunidad">Clips</button>
-                <button class="btn-comunidad">ESports</button>
+            <nav class="comunidad__navegacion">
+                <button class="comunidad__btn">Para ti</button>
+                <button class="comunidad__btn">Siguiendo</button>
+                <button class="comunidad__btn">Discusiones</button>
+                <button class="comunidad__btn">Clips</button>
+                <button class="comunidad__btn">ESports</button>
             </nav>
 
-            <div id="contenedor-tarjetas">
+            <div class="comunidad__tarjetas">
                 <article class="tarjeta-video">
-                    <div id="info-publicacion">
-                        <h3>ACE ÉPICO</h3>
-                        <p>Eran tremendos bots.😴</p>
+                    <div class="tarjeta-video__info-publicacion">
+                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
+                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
                     </div>
 
-                    <div id="info-jugador">
-                        <p class="nombre_jugador"><b>Player#0001</b></p>
-                        <p class="tiempo">Hace 2 horas</p>
+                    <div class="tarjeta-video__info-jugador">
+                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
+                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
                     </div>
 
-                    <iframe src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
+                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
                         height="195" loading="lazy"></iframe>
 
-                    <div class="iconos-publicacion">
+                    <div class="tarjeta-video__iconos">
                         <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
                         <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
                     </div>
                 </article>
 
                 <article class="tarjeta-video">
-                    <div id="info-publicacion">
-                        <h3>ACE ÉPICO</h3>
-                        <p>Eran tremendos bots.😴</p>
+                    <div class="tarjeta-video__info-publicacion">
+                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
+                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
                     </div>
 
-                    <div id="info-jugador">
-                        <p class="nombre_jugador"><b>Player#0001</b></p>
-                        <p class="tiempo">Hace 2 horas</p>
+                    <div class="tarjeta-video__info-jugador">
+                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
+                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
                     </div>
 
-                    <iframe src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
+                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
                         height="195" loading="lazy"></iframe>
 
-                    <div class="iconos-publicacion">
+                    <div class="tarjeta-video__iconos">
                         <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
                         <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
                     </div>
                 </article>
 
                 <article class="tarjeta-video">
-                    <div id="info-publicacion">
-                        <h3>ACE ÉPICO</h3>
-                        <p>Eran tremendos bots.😴</p>
+                    <div class="tarjeta-video__info-publicacion">
+                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
+                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
                     </div>
 
-                    <div id="info-jugador">
-                        <p class="nombre_jugador"><b>Player#0001</b></p>
-                        <p class="tiempo">Hace 2 horas</p>
+                    <div class="tarjeta-video__info-jugador">
+                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
+                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
                     </div>
 
-                    <iframe src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
+                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
                         height="195" loading="lazy"></iframe>
 
-                    <div class="iconos-publicacion">
+                    <div class="tarjeta-video__iconos">
                         <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
                         <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
                     </div>
                 </article>
 
                 <article class="tarjeta-video">
-                    <div id="info-publicacion">
-                        <h3>ACE ÉPICO</h3>
-                        <p>Eran tremendos bots.😴</p>
+                    <div class="tarjeta-video__info-publicacion">
+                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
+                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
                     </div>
 
-                    <div id="info-jugador">
-                        <p class="nombre_jugador"><b>Player#0001</b></p>
-                        <p class="tiempo">Hace 2 horas</p>
+                    <div class="tarjeta-video__info-jugador">
+                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
+                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
                     </div>
 
-                    <iframe src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
+                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
                         height="195" loading="lazy"></iframe>
 
-                    <div class="iconos-publicacion">
+                    <div class="tarjeta-video__iconos">
+                        <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
+                        <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
+                    </div>
+                </article>
+                <article class="tarjeta-video">
+                    <div class="tarjeta-video__info-publicacion">
+                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
+                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
+                    </div>
+
+                    <div class="tarjeta-video__info-jugador">
+                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
+                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
+                    </div>
+
+                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
+                        height="195" loading="lazy"></iframe>
+
+                    <div class="tarjeta-video__iconos">
                         <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
                         <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
                     </div>
                 </article>
 
                 <article class="tarjeta-video">
-                    <div id="info-publicacion">
-                        <h3>ACE ÉPICO</h3>
-                        <p>Eran tremendos bots.😴</p>
+                    <div class="tarjeta-video__info-publicacion">
+                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
+                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
                     </div>
 
-                    <div id="info-jugador">
-                        <p class="nombre_jugador"><b>Player#0001</b></p>
-                        <p class="tiempo">Hace 2 horas</p>
+                    <div class="tarjeta-video__info-jugador">
+                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
+                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
                     </div>
 
-                    <iframe src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
+                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
                         height="195" loading="lazy"></iframe>
 
-                    <div class="iconos-publicacion">
-                        <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
-                        <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
-                    </div>
-                </article>
-
-                <article class="tarjeta-video">
-                    <div id="info-publicacion">
-                        <h3>ACE ÉPICO</h3>
-                        <p>Eran tremendos bots.😴</p>
-                    </div>
-
-                    <div id="info-jugador">
-                        <p class="nombre_jugador"><b>Player#0001</b></p>
-                        <p class="tiempo">Hace 2 horas</p>
-                    </div>
-
-                    <iframe src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
-                        height="195" loading="lazy"></iframe>
-
-                    <div class="iconos-publicacion">
+                    <div class="tarjeta-video__iconos">
                         <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
                         <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
                     </div>
                 </article>
             </div>
-
         </section>
 
-        <section id="calendario">
+        <section class="calendario" id="calendario">
             <table style="width: 300px;">
                 <thead>
                     <tr>
@@ -246,7 +241,7 @@
                         <td>1</td>
                         <td>2</td>
                     </tr>
-                    <tr>
+                     <tr>
                         <td>3</td>
                         <td>4</td>
                         <td>5</td>

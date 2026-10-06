@@ -19,8 +19,7 @@ body {
     box-sizing: border-box;
 }
 
-
-aside {
+.barra-lateral {
     margin: 0;
     padding: 1rem;
     text-align: left;
@@ -28,20 +27,27 @@ aside {
     display: flex;
 }
 
-img {
+.barra-lateral__logo {
     padding: 15px;
 }
 
-#inicio {
+.inicio {
     margin: 0;
     padding: 3rem;
     background-color: var(--color-fondo-section);
+}
+
+.inicio__busqueda::placeholder {
+    color: #9a7bcf;
+    font-style: italic;
+    opacity: 0.8;
 }
 
 h1 {
     color: white;
     font-size: large;
 }
+
 h2 {
     color: white;
 }
@@ -62,17 +68,13 @@ section {
     padding: 1rem;
 }
 
-#buttons {
-    text-align: center;
-}
-
-#contenedor-tarjetas {
+.comunidad__tarjetas {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
-.btn-comunidad {
+.comunidad__btn {
     background-color: var(--color-fondo-section);
     border: none;
     color: white;
@@ -80,9 +82,27 @@ section {
     padding: 0.5rem;
     min-width: 10rem;
     transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn-comunidad:hover {
+.comunidad__btn::after {
+    content: ""; 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    background-color: var(--color-azulbtn);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.comunidad__btn:hover::after {
+    width: 80%;
+}
+
+.comunidad__btn:hover {
     background-color: var(--color-fondo);
 }
 
@@ -100,35 +120,25 @@ section {
     min-height: 15rem;
 }
 
-.tarjeta-video h3 {
-    text-align: left;
-}
-
-.tarjeta-video p {
-    text-align: left;
-}
-
-.tarjeta-video .nombre_jugador {
-    text-align: right;
-}
-
 .tarjeta-video:hover {
     box-shadow: 0 5px 20px var(--color-hover);
 }
 
-.nombre_jugador {
+.tarjeta-video__titulo {
+    text-align: left;
+}
+
+.tarjeta-video__descripcion {
+    text-align: left;
+}
+
+.tarjeta-video__nombre {
+    text-align: right;
     color: white;
     font-size: small;
 }
 
-footer {
-    margin: 0;
-    padding: 1rem;
-    text-align: center;
-    background-color: rgb(28, 4, 50);
-}
-
-#noticias-destacadas {
+.noticias-destacadas {
     transition: box-shadow 0.3s ease;
     background-color: var(--color-fondo-section);
     margin: 1.5rem;
@@ -140,3 +150,9 @@ footer {
     text-align: center;
 }
 
+footer {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgb(28, 4, 50);
+}
