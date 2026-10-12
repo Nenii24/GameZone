@@ -4,300 +4,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> UltiHub - Tu red social para gamers</title>
-    <meta name="description" content="UltiHub es la red social para gamers donde puedes compartir tus partidas,
-    torneos y clips. Únete a nuestra comunidad.">
-    <meta property="og:title" content="UltiHub - Tu red social para gamers">
-    <meta property="og:description" content="UltiHub es la red social para gamers donde puedes compartir tus partidas,
-    torneos y clips. Únete a nuestra comunidad.">
-    <meta property="og:image" content="assets/img/overwatch-juno.png">
-    <meta property="og:url" content="https://ultihub.com">
-    <meta property="og:type" content="website">
-    <meta name="robots" content="index, follow">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="UltiHub">
-    <meta name="twitter:description" content="Tu red social para gamers">
-    <meta name="twitter:image" content="assets/img/overwatch-juno.png">
+    <title>UltiHub - Tu red social para gamers</title>
+    <meta name="description" content="UltiHub es la red social para gamers donde puedes compartir tus partidas, torneos y clips. Únete a nuestra comunidad.">
 
     <link rel="stylesheet" href="css/style.css">
-    <!-- fuentes... -->
     <link href="https://fonts.cdnfonts.com/css/tahoma" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "website",
-        "name": "UltiHub",
-        "description": "Tu red social para gamers.",
-        "provider":{ "@type": "Organization", "name": "UltiHub DECs"}
-    }
-    </script>
-
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Grid Area: header -->
     <header class="inicio" id="inicio">
-        <h1>¡Bienvenido, a UltiHub!👋</h1>
-        <h2>¿Listo para jugar y compartir?</h2>
-        <input class="inicio__busqueda" size="40" type="text" id="busqueda" name="busqeda"
-            placeholder="🔍Buscar partidas, torneos, jugadores..." />
-        <br>
-        <button class="inicio__btn">Iniciar sesión</button>
-        <button class="inicio__btn"><a href="/pages/registro.html" title="Ir al formulario de registro">Registrarse</a></button>
+        <div class="left">
+            <img class="header__logo" src="assets/img/logotipo-ultihub-sin-fondo.svg" alt="logo-ultihub" width="130" loading="lazy">
+            <div>
+                <h1>¡Bienvenido, a UltiHub!👋</h1>
+                <h2>¿Listo para jugar y compartir?</h2>
+            </div>
+        </div>
+        
+        <search class="right">
+            <input class="inicio__busqueda" size="40" type="text" id="busqueda" placeholder="🔍 Buscar partidas, torneos..." />
+            <button class="inicio__btn">Iniciar sesión</button>
+            <button class="inicio__btn"><a href="/pages/registro.html">Registrarse</a></button>
+        </search>
     </header>
 
-    <aside class="barra-lateral">
-        <img class="barra-lateral__logo" src="assets/img/logotipo-ultihub-sin-fondo.svg" alt="logo-ultihub" width="180px" loading="lazy">
-
-        <ul class="barra-lateral__menu">
-            <li class="barra-lateral__item"><a href="/index.html" title="Ir al Inicio">Inicio</a></li>
-            <li class="barra-lateral__item"><a href="/pages/torneos.html" title="Ir a la sección de Torneos">Torneos</a></li>
-            <li class="barra-lateral__item"><a href="/pages/ranking.html" title="Ir a la sección de Ranking">Ranking</a></li>
-            <li class="barra-lateral__item"><a href="/pages/calendario.html" title="Ir al Calendario">Calendario</a></li>
-            <li class="barra-lateral__item"><a href="/pages/comunidad.html" title="Ir a la sección de Comunidad">Comunidad</a></li>
-            <li class="barra-lateral__item"><a href="/pages/clips.html" title="Ir a la sección de Clips">Clips</a></li>
-            <li class="barra-lateral__item"><a href="/pages/ajustes.html" title="Ir a los Ajustes">Ajustes</a></li>
+    <!-- Grid Area: sidebar -->
+    <nav class="barra-lateral">
+        <ul class="barra-lateral_menu">
+            <li class="barra-lateral__item">
+                <a href="/index.html" title="Inicio">
+                    <img src="assets/icons/hogar.svg" alt="Inicio">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="barra-lateral__item">
+                <a href="/pages/torneos.html" title="Torneos">
+                    <img src="assets/icons/trofeo.svg" alt="Torneos">
+                    <span>Torneos</span>
+                </a>
+            </li>
+            <li class="barra-lateral__item">
+                <a href="/pages/ranking.html" title="Ranking">
+                    <img src="assets/icons/chat-flecha-crecer.svg" alt="Ranking">
+                    <span>Ranking</span>
+                </a>
+            </li>
+            <li class="barra-lateral__item">
+                <a href="/pages/calendario.html" title="Calendario">
+                    <img src="assets/icons/lineas-de-calendario.svg" alt="Calendario">
+                    <span>Calendario</span>
+                </a>
+            </li>
+            <li class="barra-lateral__item">
+                <a href="/pages/comunidad.html" title="Comunidad">
+                    <img src="assets/icons/usuarios-alt.svg" alt="Comunidad">
+                    <span>Comunidad</span>
+                </a>
+            </li>
+            <li class="barra-lateral__item">
+                <a href="/pages/clips.html" title="Clips">
+                    <img src="assets/icons/video-camara-alt.svg" alt="Clips">
+                    <span>Clips</span>
+                </a>
+            </li>
+            <li class="barra-lateral__item">
+                <a href="/pages/ajustes.html" title="Ajustes">
+                    <img src="assets/icons/ajustes.svg" alt="Ajustes">
+                    <span>Ajustes</span>
+                </a>
+            </li>
         </ul>
-    </aside>
+    </nav>
 
+    <!-- Grid Area: main -->
     <main>
         <article class="noticias-destacadas">
-            <h2 class="noticias-destacadas__titulo">Noticias Destacadas</h2>
-            <h3 class="noticias-destacadas__subtitulo">Overwatch weekly tournament</h3>
-            <p class="noticias-destacadas__descripcion">Torneo semanal de overwatch</p>
-            <ul class="noticias-destacadas__lista">21 Octubre - 13:00 hr</ul>
-            <ul class="noticias-destacadas__lista">10/20 participantes</ul>
-            <ul class="noticias-destacadas__lista">Plataformas</ul>
-            <button class="noticias-destacadas__btn">Inscribirse</button>
+            <!-- Badge superior flotante -->
+            <div class="noticias-destacadas__tag">Noticias Destacadas</div>
+
+            <div class="noticias-destacadas__contenido">
+                <div class="noticias-destacadas__imagen-container">
+                    <div class="noticias-destacadas__placeholder-img">
+                        <img src="assets/img/over.jpg">
+                    </div>
+                </div>
+
+                <!-- Información del torneo -->
+                <div class="noticias-destacadas__info">
+                    <h2 class="noticias-destacadas__titulo">Overwatch weekly tournament</h2>
+                    <p class="noticias-destacadas__subtitulo">Torneo semanal de overwatch</p>
+
+                    <div class="noticias-destacadas__detalles">
+                        <!-- Columna: Fecha y Participantes -->
+                        <div class="noticias-destacadas__meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <img src="assets/icons/lineas-de-calendario.svg" alt="Calendario" width="24" height="24">
+                                </svg>
+                                <time datetime="2026-10-21T15:00">21 Octubre - 15:00 hr</time>
+                            </div>
+
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <img src="assets/icons/usuarios-alt.svg" alt="Participantes" width="24" height="24">
+                                </svg>
+                                <span>10/20 participantes</span>
+                            </div>
+                        </div>
+
+                        <!-- Columna: Plataformas -->
+                        <div class="noticias-destacadas__plataformas">
+                            <span class="plataformas-label">Plataformas:</span>
+                            <div class="plataformas-iconos">
+                                <!-- PC / Mouse -->
+                                <svg class="plat-icon" viewBox="0 0 24 24" fill="currentColor" title="PC">
+                                    <img src="assets/icons/pc.svg" alt="PC" width="24" height="24">
+                                </svg>
+                                <!-- Xbox -->
+                                <svg class="plat-icon" viewBox="0 0 24 24" fill="currentColor" title="Xbox">
+                                    <img src="assets/icons/xbox.svg" alt="Xbox" width="24" height="24">
+                                </svg>
+                                <!-- PlayStation -->
+                                <svg class="plat-icon" viewBox="0 0 24 24" fill="currentColor" title="PlayStation">
+                                    <img src="assets/icons/play.svg" alt="PlayStation" width="24" height="24">
+                                </svg>
+                                <svg class="plat-icon" viewBox="0 0 24 24" fill="currentColor" title="Nintendo">
+                                    <img src="assets/icons/nintendo.svg" alt="Nintendo" width="24" height="24">
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noticias-destacadas__accion">
+                        <button class="noticias-destacadas__btn">Inscribirse</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginación de carrusel inferior -->
+            <div class="noticias-destacadas__puntos">
+                <span class="punto"></span>
+                <span class="punto"></span>
+                <span class="punto punto--activo"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+            </div>
         </article>
 
         <section class="comunidad" id="comunidad">
-            <h2>Comunidad</h2>
+            <!-- Título y Opciones abajo -->
+            <h2 class="comunidad__titulo">Comunidad</h2>
             <nav class="comunidad__navegacion">
-                <button class="comunidad__btn">Para ti</button>
+                <button class="comunidad__btn comunidad__btn--activo">Para tí</button>
                 <button class="comunidad__btn">Siguiendo</button>
                 <button class="comunidad__btn">Discusiones</button>
                 <button class="comunidad__btn">Clips</button>
-                <button class="comunidad__btn">ESports</button>
+                <button class="comunidad__btn">Esports</button>
             </nav>
 
+            <!-- Listado de Tarjetas de tamaño uniforme -->
             <div class="comunidad__tarjetas">
+                <!-- Tarjeta 1 -->
                 <article class="tarjeta-video">
-                    <div class="tarjeta-video__info-publicacion">
-                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
-                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
-                    </div>
+                    <header class="tarjeta-video__header">
+                        <div class="tarjeta-video__info">
+                            <h3 class="tarjeta-video__titulo">ACE ÉPICO 🥵</h3>
+                            <p class="tarjeta-video__descripcion">Eran tremendos bots 😴</p>
+                        </div>
+                        <div class="tarjeta-video__autor">
+                            <div class="autor__texto">
+                                <span class="autor__nombre">Player#0001</span>
+                                <time class="autor__tiempo">Hace 2 horas</time>
+                            </div>
+                            <div class="autor__avatar" title="Espacio para avatar"></div>
+                        </div>
+                    </header>
 
-                    <div class="tarjeta-video__info-jugador">
-                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
-                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
-                    </div>
+                    <div class="tarjeta-video__body">
+                        <div class="tarjeta-video__media">
+                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" allowfullscreen loading="lazy"></iframe>
+                        </div>
 
-                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
-                        height="195" loading="lazy"></iframe>
-
-                    <div class="tarjeta-video__iconos">
-                        <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
-                        <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
+                        <aside class="tarjeta-video__acciones">
+                            <button class="accion-btn" title="Guardar clip" aria-label="Guardar clip">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+                            </button>
+                            <div class="accion-stat" title="Vistas">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                <span>1.5 k</span>
+                            </div>
+                            <button class="accion-btn accion-stat" title="Me gusta" aria-label="Me gusta">
+                                <svg class="icon icon--heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span>1 k</span>
+                            </button>
+                        </aside>
                     </div>
                 </article>
 
+                <!-- Tarjeta 2 -->
                 <article class="tarjeta-video">
-                    <div class="tarjeta-video__info-publicacion">
-                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
-                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
-                    </div>
+                    <header class="tarjeta-video__header">
+                        <div class="tarjeta-video__info">
+                            <h3 class="tarjeta-video__titulo">ACE ÉPICO 🥵</h3>
+                            <p class="tarjeta-video__descripcion">Eran tremendos bots 😴</p>
+                        </div>
+                        <div class="tarjeta-video__autor">
+                            <div class="autor__texto">
+                                <span class="autor__nombre">Player#0001</span>
+                                <time class="autor__tiempo">Hace 2 horas</time>
+                            </div>
+                            <div class="autor__avatar" title="Espacio para avatar"></div>
+                        </div>
+                    </header>
 
-                    <div class="tarjeta-video__info-jugador">
-                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
-                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
-                    </div>
+                    <div class="tarjeta-video__body">
+                        <div class="tarjeta-video__media">
+                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" allowfullscreen loading="lazy"></iframe>
+                        </div>
 
-                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
-                        height="195" loading="lazy"></iframe>
-
-                    <div class="tarjeta-video__iconos">
-                        <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
-                        <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
+                        <aside class="tarjeta-video__acciones">
+                            <button class="accion-btn" title="Guardar clip" aria-label="Guardar clip">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+                            </button>
+                            <div class="accion-stat" title="Vistas">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                <span>1.5 k</span>
+                            </div>
+                            <button class="accion-btn accion-stat" title="Me gusta" aria-label="Me gusta">
+                                <svg class="icon icon--heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span>1 k</span>
+                            </button>
+                        </aside>
                     </div>
                 </article>
 
+                <!-- Tarjeta 3 -->
                 <article class="tarjeta-video">
-                    <div class="tarjeta-video__info-publicacion">
-                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
-                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
-                    </div>
+                    <header class="tarjeta-video__header">
+                        <div class="tarjeta-video__info">
+                            <h3 class="tarjeta-video__titulo">ACE ÉPICO 🥵</h3>
+                            <p class="tarjeta-video__descripcion">Eran tremendos bots 😴</p>
+                        </div>
+                        <div class="tarjeta-video__autor">
+                            <div class="autor__texto">
+                                <span class="autor__nombre">Player#0001</span>
+                                <time class="autor__tiempo">Hace 2 horas</time>
+                            </div>
+                            <div class="autor__avatar" title="Espacio para avatar"></div>
+                        </div>
+                    </header>
 
-                    <div class="tarjeta-video__info-jugador">
-                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
-                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
-                    </div>
+                    <div class="tarjeta-video__body">
+                        <div class="tarjeta-video__media">
+                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" allowfullscreen loading="lazy"></iframe>
+                        </div>
 
-                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
-                        height="195" loading="lazy"></iframe>
-
-                    <div class="tarjeta-video__iconos">
-                        <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
-                        <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
+                        <aside class="tarjeta-video__acciones">
+                            <button class="accion-btn" title="Guardar clip" aria-label="Guardar clip">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+                            </button>
+                            <div class="accion-stat" title="Vistas">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                <span>1.5 k</span>
+                            </div>
+                            <button class="accion-btn accion-stat" title="Me gusta" aria-label="Me gusta">
+                                <svg class="icon icon--heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span>1 k</span>
+                            </button>
+                        </aside>
                     </div>
                 </article>
 
+                <!-- Tarjeta 4 -->
                 <article class="tarjeta-video">
-                    <div class="tarjeta-video__info-publicacion">
-                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
-                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
-                    </div>
+                    <header class="tarjeta-video__header">
+                        <div class="tarjeta-video__info">
+                            <h3 class="tarjeta-video__titulo">ACE ÉPICO 🥵</h3>
+                            <p class="tarjeta-video__descripcion">Eran tremendos bots 😴</p>
+                        </div>
+                        <div class="tarjeta-video__autor">
+                            <div class="autor__texto">
+                                <span class="autor__nombre">Player#0001</span>
+                                <time class="autor__tiempo">Hace 2 horas</time>
+                            </div>
+                            <div class="autor__avatar" title="Espacio para avatar"></div>
+                        </div>
+                    </header>
 
-                    <div class="tarjeta-video__info-jugador">
-                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
-                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
-                    </div>
+                    <div class="tarjeta-video__body">
+                        <div class="tarjeta-video__media">
+                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" allowfullscreen loading="lazy"></iframe>
+                        </div>
 
-                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
-                        height="195" loading="lazy"></iframe>
-
-                    <div class="tarjeta-video__iconos">
-                        <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
-                        <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
-                    </div>
-                </article>
-                <article class="tarjeta-video">
-                    <div class="tarjeta-video__info-publicacion">
-                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
-                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
-                    </div>
-
-                    <div class="tarjeta-video__info-jugador">
-                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
-                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
-                    </div>
-
-                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
-                        height="195" loading="lazy"></iframe>
-
-                    <div class="tarjeta-video__iconos">
-                        <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
-                        <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
-                    </div>
-                </article>
-
-                <article class="tarjeta-video">
-                    <div class="tarjeta-video__info-publicacion">
-                        <h3 class="tarjeta-video__titulo">ACE ÉPICO</h3>
-                        <p class="tarjeta-video__descripcion">Eran tremendos bots.😴</p>
-                    </div>
-
-                    <div class="tarjeta-video__info-jugador">
-                        <p class="tarjeta-video__nombre"><b>Player#0001</b></p>
-                        <p class="tarjeta-video__tiempo">Hace 2 horas</p>
-                    </div>
-
-                    <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" width="350"
-                        height="195" loading="lazy"></iframe>
-
-                    <div class="tarjeta-video__iconos">
-                        <img src="assets/icons/icon-save.svg" width="30rem" alt="icono-para-guardar" loading="lazy">
-                        <img src="assets/icons/icon-views.svg" width="50rem" alt="icono-vistas" loading="lazy">
+                        <aside class="tarjeta-video__acciones">
+                            <button class="accion-btn" title="Guardar clip" aria-label="Guardar clip">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+                            </button>
+                            <div class="accion-stat" title="Vistas">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                <span>1.5 k</span>
+                            </div>
+                            <button class="accion-btn accion-stat" title="Me gusta" aria-label="Me gusta">
+                                <svg class="icon icon--heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span>1 k</span>
+                            </button>
+                        </aside>
                     </div>
                 </article>
             </div>
         </section>
 
+        <!-- Calendario -->
         <section class="calendario" id="calendario">
-            <table style="width: 300px;">
+            <h2>Calendario</h2>
+            <table>
                 <thead>
-                    <tr>
-                        <h2>Calendario</h2>
-                    </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <th colspan="7">Septiembre</th>
                     </tr>
                     <tr>
-                        <th>Mo</th>
-                        <th>Tu</th>
-                        <th>We</th>
-                        <th>Th</th>
-                        <th>Fr</th>
-                        <th>Sa</th>
-                        <th>Su</th>
+                        <th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th>
                     </tr>
-                    <tr>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                        <td>31</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                     <tr>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                        <td>16</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                    </tr>
-                    <tr>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td>1</td><td>2</td></tr>
+                    <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+                    <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+                    <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+                    <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
                 </tbody>
             </table>
             <br>
             <strong>Próximas fechas</strong>
-            <br>
             <button>13 de Septiembre - Valorant AC Series 2</button>
             <button>21 de Septiembre - Overwatch weekly tournament</button>
         </section>
-
-        <a href="#inicio">Regresar a arriba</a>
+        
+        <a href="#inicio" class="back-to-top">Regresar a arriba</a>
     </main>
 
+    <!-- Grid Area: footer -->
     <footer>
         <p>© GameZone 2026® - Tu página de gaming - DASC</p>
     </footer>
