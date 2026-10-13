@@ -22,6 +22,9 @@
                 <h2>¿Listo para jugar y compartir?</h2>
             </div>
         </div>
+        <div class="header__movil">
+            <button class="header__login">Iniciar sesión</button>
+        </div>
         
         <search class="right">
             <input class="inicio__busqueda" size="40" type="text" id="busqueda" placeholder="🔍 Buscar partidas, torneos..." />
@@ -33,7 +36,7 @@
     <!-- Grid Area: sidebar -->
     <nav class="barra-lateral">
         <ul class="barra-lateral_menu">
-            <li class="barra-lateral__item">
+            <li class="barra-lateral__item barra-lateral__item--activo">
                 <a href="/index.html" title="Inicio">
                     <img src="assets/icons/hogar.svg" alt="Inicio">
                     <span>Inicio</span>
@@ -51,7 +54,7 @@
                     <span>Ranking</span>
                 </a>
             </li>
-            <li class="barra-lateral__item">
+            <li class="barra-lateral__item barra-lateral__item--extra">
                 <a href="/pages/calendario.html" title="Calendario">
                     <img src="assets/icons/lineas-de-calendario.svg" alt="Calendario">
                     <span>Calendario</span>
@@ -63,13 +66,13 @@
                     <span>Comunidad</span>
                 </a>
             </li>
-            <li class="barra-lateral__item">
+            <li class="barra-lateral__item barra-lateral__item--extra">
                 <a href="/pages/clips.html" title="Clips">
                     <img src="assets/icons/video-camara-alt.svg" alt="Clips">
                     <span>Clips</span>
                 </a>
             </li>
-            <li class="barra-lateral__item">
+            <li class="barra-lateral__item barra-lateral__item--extra">
                 <a href="/pages/ajustes.html" title="Ajustes">
                     <img src="assets/icons/ajustes.svg" alt="Ajustes">
                     <span>Ajustes</span>
@@ -81,7 +84,7 @@
     <!-- Grid Area: main -->
     <main>
         <article class="noticias-destacadas">
-            <!-- Badge superior flotante -->
+
             <div class="noticias-destacadas__tag">Noticias Destacadas</div>
 
             <div class="noticias-destacadas__contenido">
@@ -91,7 +94,6 @@
                     </div>
                 </div>
 
-                <!-- Información del torneo -->
                 <div class="noticias-destacadas__info">
                     <h2 class="noticias-destacadas__titulo">Overwatch weekly tournament</h2>
                     <p class="noticias-destacadas__subtitulo">Torneo semanal de overwatch</p>
