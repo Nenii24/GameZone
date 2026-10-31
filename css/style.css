@@ -1,5 +1,4 @@
 /* 
-  ÍNDICE
   1. Variables y Temas              (:root, prefers-color-scheme)
   2. Estilos Base                   (reset, tipografía, body)
   3. Layout Global                  (header.inicio, barra-lateral)
@@ -1007,4 +1006,267 @@ footer {
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto !important; }
+}
+
+/* Menu hamburguesa / Expandible */
+
+/* Botón hamburguesa */
+.btn-hamburguesa {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-fondo-input);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde-md);
+  padding: 9px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-hamburguesa:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-acento-magenta);
+}
+
+.btn-hamburguesa span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-texto-primario);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animación del botón a icono 'X' cuando el menú está abierto */
+.btn-hamburguesa.activo span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.btn-hamburguesa.activo span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.btn-hamburguesa.activo span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* EN ESCRITORIO Y TABLETS: La barra lateral se expande en el Grid y desplaza el contenido */
+@media screen and (min-width: 768px) {
+  /* Transición fluida al expandir la columna en el body */
+  body {
+    transition: grid-template-columns 0.3s ease;
+  }
+
+  /* Al abrir el menú, la columna de la barra lateral se amplía a 240px desplazando a main */
+  body.menu-expandido {
+    grid-template-columns: 240px minmax(0, 1fr) !important;
+  }
+
+  nav.barra-lateral {
+    transition: width 0.3s ease, padding 0.3s ease;
+  }
+
+  /* Estado expandido de la barra lateral */
+  nav.barra-lateral.menu-abierto {
+    width: 100% !important;
+    padding: var(--espaciado-md) var(--espaciado-sm) !important;
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral_menu {
+    align-items: stretch;
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral__item {
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral__item a {
+    justify-content: flex-start !important;
+    padding: 10px 14px !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  /* Hacemos visibles las etiquetas de texto de cada opción */
+  nav.barra-lateral.menu-abierto .barra-lateral__item a span {
+    display: inline-block !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    color: var(--color-texto-primario) !important;
+  }
+
+  /* Mostramos todas las opciones extra en el menú expandido */
+  nav.barra-lateral.menu-abierto .barra-lateral__item--extra {
+    display: flex !important;
+  }
+}
+
+/* EN MÓVILES (menos de 768px): El menú se despliega verticalmente entre header y main */
+@media screen and (max-width: 767px) {
+  body {
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    padding-bottom: var(--espaciado-lg);
+  }
+
+  nav.barra-lateral {
+    grid-area: sidebar;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: none !important; /* Colapsado por defecto */
+    background-color: var(--color-fondo-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde-md);
+    padding: var(--espaciado-md);
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Desplegado en móvil al pulsar el botón */
+  nav.barra-lateral.menu-abierto {
+    display: block !important;
+    margin-bottom: var(--espaciado-sm);
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral_menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--espaciado-sm) !important;
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral__item {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral__item a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: var(--espaciado-md) !important;
+    padding: 10px 14px !important;
+    width: 100% !important;
+    border-radius: var(--radio-borde-md);
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral__item a:hover {
+    background-color: var(--color-fondo-hover);
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral__item a span {
+    display: inline-block !important;
+    font-size: 1rem !important;
+    color: var(--color-texto-primario) !important;
+  }
+
+  nav.barra-lateral.menu-abierto .barra-lateral__item--extra {
+    display: flex !important;
+  }
+}
+
+
+/* Modo claro y oscuro */
+/* Valores para Modo Claro (cuando body NO tiene la clase .modo-oscuro) */
+body {
+  --color-fondo-principal: #f4f6fb;
+  --color-fondo-superficie: #ffffff;
+  --color-fondo-tarjeta: #ffffff;
+  --color-fondo-input: #e2e8f0;
+  --color-fondo-hover: #cbd5e1;
+  --color-borde: #cbd5e1;
+  --color-borde-hover: #94a3b8;
+  --color-texto-primario: #0f172a;
+  --color-texto-secundario: #475569;
+  --gradiente-header: linear-gradient(90deg, #e2e8f0 0%, #a855f7 55%, var(--color-acento-magenta) 100%);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Valores para Modo Oscuro (cuando body TIENE la clase .modo-oscuro alternada con classList) */
+body.modo-oscuro {
+  --color-fondo-principal: #0a0418;
+  --color-fondo-superficie: #14092e;
+  --color-fondo-tarjeta: #1a0c3b;
+  --color-fondo-input: #100624;
+  --color-fondo-hover: #22104d;
+  --color-borde: #2c1559;
+  --color-borde-hover: #48238a;
+  --color-texto-primario: #ffffff;
+  --color-texto-secundario: #a394c2;
+  --gradiente-header: linear-gradient(90deg, #22104d 0%, #7b2cbf 55%, var(--color-acento-magenta) 100%);
+}
+
+/* Estilos de los botones para alternar modo claro/oscuro */
+.btn-tema {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 16px;
+  background-color: var(--color-fondo-input);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde-md);
+  color: var(--color-texto-primario);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-tema:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-acento-magenta);
+}
+
+/* Botón de tema en cabecera móvil (formato circular compacto) */
+.header__btn-tema {
+  width: 42px;
+  height: 42px;
+  min-height: 42px;
+  padding: 0;
+  border-radius: var(--radio-borde-full);
+  font-size: 1.2rem;
+}
+
+/* En móvil ocultamos el botón de escritorio */
+@media screen and (max-width: 767px) {
+  .inicio__btn-tema {
+    display: none;
+  }
+}
+
+/* En escritorio mostramos el botón de tema estilizado */
+@media screen and (min-width: 768px) {
+  .inicio__btn-tema {
+    display: inline-flex;
+  }
+}
+
+
+/* Filtro o buscador */
+/* Clase que oculta tarjetas que no coinciden con la búsqueda */
+.tarjeta-video.oculta {
+  display: none !important;
+}
+
+/* Mensaje visual que se muestra si ninguna tarjeta coincide */
+.mensaje-sin-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--espaciado-xl) var(--espaciado-md);
+  background-color: var(--color-fondo-tarjeta);
+  border: 1px dashed var(--color-borde);
+  border-radius: var(--radio-borde-md);
+  color: var(--color-texto-secundario);
+  font-size: 1.05rem;
 }

@@ -12,28 +12,50 @@
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
 </head>
 
-<body>
+<!-- Modo oscuro -->
+<body class="modo-oscuro">
     <!-- Grid Area: header -->
     <header class="inicio" id="inicio">
         <div class="left">
+            <!-- Menu hamburguesa con classList.toggle-->] 
+            <button class="btn-hamburguesa" id="btn-hamburguesa" aria-label="Abrir o cerrar menú" title="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <img class="header__logo" src="assets/img/logotipo-ultihub-sin-fondo.svg" alt="logo-ultihub" width="130" loading="lazy">
             <div>
                 <h1>¡Bienvenido, a UltiHub!👋</h1>
                 <h2>¿Listo para jugar y compartir?</h2>
             </div>
         </div>
+
         <div class="header__movil">
+            <!--Modo oscuro para moviles -->
+            <button class="btn-tema header__btn-tema" id="btn-tema-movil" aria-label="Cambiar a modo claro" title="Cambiar a modo claro">
+                <span class="btn-tema__icono">☀️</span>
+            </button>
             <button class="header__login">Iniciar sesión</button>
         </div>
         
         <search class="right">
-            <input class="inicio__busqueda" size="40" type="text" id="busqueda" placeholder="🔍 Buscar partidas, torneos..." />
+            <!-- Filtrador usando el input buscar -->
+            <input class="inicio__busqueda" size="40" type="text" id="busqueda" placeholder="🔍 Buscar partidas, torneos, clips..." />
+            
+            <!--Boton para alternar modo claro/oscuro en pantallas de escritorio -->
+            <button class="btn-tema inicio__btn-tema" id="btn-tema" aria-label="Cambiar a modo claro" title="Cambiar a modo claro">
+                <span class="btn-tema__icono">☀️</span>
+                <span class="btn-tema__texto">Modo Claro</span>
+            </button>
+
             <button class="inicio__btn">Iniciar sesión</button>
             <button class="inicio__btn"><a href="/pages/registro.html">Registrarse</a></button>
         </search>
     </header>
 
     <!-- Grid Area: sidebar -->
+    <!-- Menú responsivo: en móvil en escritorio se integra en el layout o se colapsa -->
     <nav class="barra-lateral">
         <ul class="barra-lateral_menu">
             <li class="barra-lateral__item barra-lateral__item--activo">
@@ -90,7 +112,7 @@
             <div class="noticias-destacadas__contenido">
                 <div class="noticias-destacadas__imagen-container">
                     <div class="noticias-destacadas__placeholder-img">
-                        <img src="assets/img/over.jpg">
+                        <img src="assets/img/over.jpg" alt="Overwatch semanal">
                     </div>
                 </div>
 
@@ -166,13 +188,13 @@
                 <button class="comunidad__btn">Esports</button>
             </nav>
 
-            <!-- Listado de Tarjetas de tamaño uniforme -->
+            <!-- Tarjetas existentes que son filtradas segun lo que escribe el usuario en el buscador -->
             <div class="comunidad__tarjetas">
-                <!-- Tarjeta 1 -->
+                <!-- Tarjeta 1: Valorant -->
                 <article class="tarjeta-video">
                     <header class="tarjeta-video__header">
                         <div class="tarjeta-video__info">
-                            <h3 class="tarjeta-video__titulo">ACE ÉPICO 🥵</h3>
+                            <h3 class="tarjeta-video__titulo">ACE ÉPICO en Valorant 🥵</h3>
                             <p class="tarjeta-video__descripcion">Eran tremendos bots 😴</p>
                         </div>
                         <div class="tarjeta-video__autor">
@@ -205,17 +227,17 @@
                     </div>
                 </article>
 
-                <!-- Tarjeta 2 -->
+                <!-- Tarjeta 2: Overwatch -->
                 <article class="tarjeta-video">
                     <header class="tarjeta-video__header">
                         <div class="tarjeta-video__info">
-                            <h3 class="tarjeta-video__titulo">ACE ÉPICO 🥵</h3>
-                            <p class="tarjeta-video__descripcion">Eran tremendos bots 😴</p>
+                            <h3 class="tarjeta-video__titulo">Overwatch 2 - Clutch con Juno 🚀</h3>
+                            <p class="tarjeta-video__descripcion">Partida de torneo semanal en tiempo extra</p>
                         </div>
                         <div class="tarjeta-video__autor">
                             <div class="autor__texto">
-                                <span class="autor__nombre">Player#0001</span>
-                                <time class="autor__tiempo">Hace 2 horas</time>
+                                <span class="autor__nombre">Valkyrie#102</span>
+                                <time class="autor__tiempo">Hace 3 horas</time>
                             </div>
                             <div class="autor__avatar" title="Espacio para avatar"></div>
                         </div>
@@ -223,7 +245,7 @@
 
                     <div class="tarjeta-video__body">
                         <div class="tarjeta-video__media">
-                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" allowfullscreen loading="lazy"></iframe>
+                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Overwatch" allowfullscreen loading="lazy"></iframe>
                         </div>
 
                         <aside class="tarjeta-video__acciones">
@@ -232,27 +254,27 @@
                             </button>
                             <div class="accion-stat" title="Vistas">
                                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span>1.5 k</span>
+                                <span>2.8 k</span>
                             </div>
                             <button class="accion-btn accion-stat" title="Me gusta" aria-label="Me gusta">
                                 <svg class="icon icon--heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span>1 k</span>
+                                <span>2.1 k</span>
                             </button>
                         </aside>
                     </div>
                 </article>
 
-                <!-- Tarjeta 3 -->
+                <!-- Tarjeta 3: Fortnite -->
                 <article class="tarjeta-video">
                     <header class="tarjeta-video__header">
                         <div class="tarjeta-video__info">
-                            <h3 class="tarjeta-video__titulo">ACE ÉPICO 🥵</h3>
-                            <p class="tarjeta-video__descripcion">Eran tremendos bots 😴</p>
+                            <h3 class="tarjeta-video__titulo">Fortnite - Victoria Magistral 🏆</h3>
+                            <p class="tarjeta-video__descripcion">Solo vs Squads en los círculos finales</p>
                         </div>
                         <div class="tarjeta-video__autor">
                             <div class="autor__texto">
-                                <span class="autor__nombre">Player#0001</span>
-                                <time class="autor__tiempo">Hace 2 horas</time>
+                                <span class="autor__nombre">ProGamer#77</span>
+                                <time class="autor__tiempo">Hace 5 horas</time>
                             </div>
                             <div class="autor__avatar" title="Espacio para avatar"></div>
                         </div>
@@ -260,7 +282,7 @@
 
                     <div class="tarjeta-video__body">
                         <div class="tarjeta-video__media">
-                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" allowfullscreen loading="lazy"></iframe>
+                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Fortnite" allowfullscreen loading="lazy"></iframe>
                         </div>
 
                         <aside class="tarjeta-video__acciones">
@@ -269,27 +291,27 @@
                             </button>
                             <div class="accion-stat" title="Vistas">
                                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span>1.5 k</span>
+                                <span>950</span>
                             </div>
                             <button class="accion-btn accion-stat" title="Me gusta" aria-label="Me gusta">
                                 <svg class="icon icon--heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span>1 k</span>
+                                <span>820</span>
                             </button>
                         </aside>
                     </div>
                 </article>
 
-                <!-- Tarjeta 4 -->
+                <!-- Tarjeta 4: League of Legends -->
                 <article class="tarjeta-video">
                     <header class="tarjeta-video__header">
                         <div class="tarjeta-video__info">
-                            <h3 class="tarjeta-video__titulo">ACE ÉPICO 🥵</h3>
-                            <p class="tarjeta-video__descripcion">Eran tremendos bots 😴</p>
+                            <h3 class="tarjeta-video__titulo">League of Legends - Pentakill ⚔️</h3>
+                            <p class="tarjeta-video__descripcion">Robo de Barón Nashor y victoria en ranked</p>
                         </div>
                         <div class="tarjeta-video__autor">
                             <div class="autor__texto">
-                                <span class="autor__nombre">Player#0001</span>
-                                <time class="autor__tiempo">Hace 2 horas</time>
+                                <span class="autor__nombre">MidLaneGod#55</span>
+                                <time class="autor__tiempo">Hace 1 día</time>
                             </div>
                             <div class="autor__avatar" title="Espacio para avatar"></div>
                         </div>
@@ -297,7 +319,7 @@
 
                     <div class="tarjeta-video__body">
                         <div class="tarjeta-video__media">
-                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de Valorant" allowfullscreen loading="lazy"></iframe>
+                            <iframe class="tarjeta-video__iframe" src="https://youtube.com/embed/WgK1D5Rhhgo" title="Clip de LoL" allowfullscreen loading="lazy"></iframe>
                         </div>
 
                         <aside class="tarjeta-video__acciones">
@@ -306,11 +328,11 @@
                             </button>
                             <div class="accion-stat" title="Vistas">
                                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                                <span>1.5 k</span>
+                                <span>3.4 k</span>
                             </div>
                             <button class="accion-btn accion-stat" title="Me gusta" aria-label="Me gusta">
                                 <svg class="icon icon--heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span>1 k</span>
+                                <span>1.8 k</span>
                             </button>
                         </aside>
                     </div>
@@ -351,6 +373,9 @@
     <footer>
         <p>© GameZone 2026® - Tu página de gaming - DASC</p>
     </footer>
+
+    <!-- Incluimos el archivo script.js con defer para que se ejecute una vez cargado el DOM -->
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
