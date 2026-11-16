@@ -17,7 +17,7 @@
     <!-- Grid Area: header -->
     <header class="inicio" id="inicio">
         <div class="left">
-            <!-- Menu hamburguesa con classList.toggle-->] 
+            <!-- Menu hamburguesa con classList.toggle -->
             <button class="btn-hamburguesa" id="btn-hamburguesa" aria-label="Abrir o cerrar menú" title="Menú">
                 <span></span>
                 <span></span>
@@ -176,6 +176,23 @@
                 <span class="punto"></span>
             </div>
         </article>
+
+        <!-- Sección de torneos cargados dinámicamente con fetch desde JSON propio -->
+        <section class="torneos-api" id="torneos-disponibles">
+            <div class="torneos-api__cabecera">
+                <h2 class="torneos-api__titulo">Torneos Disponibles</h2>
+                <div class="torneos-api__controles">
+                    <button type="button" class="torneos-api__btn-filtro" id="btn-solo-favoritos">★ Favoritos (0)</button>
+                    <button type="button" class="torneos-api__btn-recargar" id="btn-recargar-torneos" title="Recargar torneos">↻ Actualizar</button>
+                </div>
+            </div>
+
+            <!-- Contenedor para mensajes de carga o error durante la petición fetch -->
+            <div class="torneos-api__estado" id="estado-torneos" aria-live="polite"></div>
+
+            <!-- Contenedor donde se renderizan las tarjetas obtenidas con fetch -->
+            <div class="torneos-api__grid" id="contenedor-torneos"></div>
+        </section>
 
         <section class="comunidad" id="comunidad">
             <!-- Título y Opciones abajo -->
@@ -374,6 +391,8 @@
         <p>© GameZone 2026® - Tu página de gaming - DASC</p>
     </footer>
 
+    <!-- Librería externa SweetAlert2 instalada con npm para avisos y confirmaciones -->
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js" defer></script>
     <!-- Incluimos el archivo script.js con defer para que se ejecute una vez cargado el DOM -->
     <script src="js/script.js" defer></script>
 </body>

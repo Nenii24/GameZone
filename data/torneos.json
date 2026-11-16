@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "titulo": "Overwatch Weekly Tournament",
+    "juego": "Overwatch 2",
+    "fecha": "21 de Octubre - 15:00 hr",
+    "premio": "$500 USD",
+    "cupos": "10/20 participantes",
+    "plataforma": "PC / Consolas",
+    "estado": "Abierto"
+  },
+  {
+    "id": 2,
+    "titulo": "Valorant AC Series 2",
+    "juego": "Valorant",
+    "fecha": "25 de Octubre - 18:00 hr",
+    "premio": "$750 USD",
+    "cupos": "14/16 equipos",
+    "plataforma": "PC",
+    "estado": "Abierto"
+  },
+  {
+    "id": 3,
+    "titulo": "Fortnite Zero Build Cup",
+    "juego": "Fortnite",
+    "fecha": "28 de Octubre - 17:00 hr",
+    "premio": "13,500 PaVos",
+    "cupos": "45/100 jugadores",
+    "plataforma": "Crossplay",
+    "estado": "Abierto"
+  },
+  {
+    "id": 4,
+    "titulo": "LoL Clash Universitario",
+    "juego": "League of Legends",
+    "fecha": "02 de Noviembre - 19:00 hr",
+    "premio": "Cofres + RP",
+    "cupos": "8/8 equipos",
+    "plataforma": "PC",
+    "estado": "Lleno"
+  }
+]

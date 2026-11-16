@@ -102,25 +102,27 @@ header.inicio {
   background: var(--gradiente-header);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio-borde-md);
-  padding: var(--espaciado-md);
+  padding: 12px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
     "logo   acciones"
     "buscar buscar";
   align-items: center;
-  gap: var(--espaciado-md);
+  gap: 10px;
 }
 
 .inicio .left {
   grid-area: logo;
   display: flex;
   align-items: center;
-  gap: var(--espaciado-md);
+  gap: 10px;
+  min-width: 0;
 
   img {
-    width: 115px;
+    width: clamp(74px, 22vw, 105px);
     height: auto;
+    flex-shrink: 1;
   }
 
   h1 {
@@ -143,17 +145,18 @@ header.inicio {
   grid-area: acciones;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .header__login {
-  min-height: 46px;
-  padding: 10px var(--espaciado-md);
+  min-height: 40px;
+  padding: 8px 14px;
   background-color: rgba(217, 70, 239, 0.3);
   border: 2px solid var(--color-acento-magenta);
   border-radius: var(--radio-borde-full);
   color: var(--color-texto-primario);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   white-space: nowrap;
   cursor: pointer;
@@ -476,7 +479,7 @@ img.plat-icon {
 }
 
 .comunidad__btn--activo {
-  color: #fff;
+  color: var(--color-texto-primario);
   font-weight: bold;
   border-bottom: 3px solid var(--color-acento-magenta);
 }
@@ -682,6 +685,8 @@ footer {
 /*Tablets*/
 @media screen and (min-width: 768px) {
   body {
+    width: 100%;
+    max-width: 100%;
     grid-template-columns: 74px minmax(0, 1fr);
     grid-template-areas:
       "header  header"
@@ -700,11 +705,14 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: var(--espaciado-md);
+    gap: var(--espaciado-md);
     background: var(--color-fondo-superficie);
   }
 
   .inicio .left {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    gap: var(--espaciado-md);
   }
 
   .inicio .left img {
@@ -722,7 +730,7 @@ footer {
   }
 
   .inicio .right {
-    flex: 1 1 auto;
+    flex: 1 1 420px;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
@@ -730,7 +738,8 @@ footer {
   }
 
   .inicio__busqueda {
-    flex: 1 1 240px;
+    flex: 1 1 180px;
+    min-width: 140px;
   }
 
   .inicio__btn {
@@ -818,8 +827,8 @@ footer {
   }
 
   .noticias-destacadas__info {
-    align-items: stretch;
-    text-align: left;
+    align-items: center;
+    text-align: center;
   }
 
   .noticias-destacadas__titulo {
@@ -833,9 +842,9 @@ footer {
   .noticias-destacadas__detalles {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: var(--espaciado-md);
+    gap: var(--espaciado-xl);
   }
 
   .noticias-destacadas__meta {
@@ -848,10 +857,11 @@ footer {
 
   .noticias-destacadas__plataformas {
     display: inline-flex;
+    align-items: center;
   }
 
   .noticias-destacadas__accion {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .noticias-destacadas__btn {
@@ -874,12 +884,13 @@ footer {
       "header  header"
       "sidebar main"
       "footer  footer";
-   /*Implementación de min() */
-    width: min(100%, 1440px);
-    margin: 0 auto; 
+    /* Implementación de min() abarcando el 100% del ancho de pantalla disponible */
+    width: min(100%, 100vw);
+    max-width: 100%;
+    margin: 0;
     
-    /*Implementación de max()*/
-    padding: max(var(--espaciado-md), 2vw);
+    /* Implementación de max() */
+    padding: max(var(--espaciado-md), 1.5vw);
     
     gap: var(--espaciado-lg);
   }
@@ -908,16 +919,22 @@ footer {
     height: calc(100vh - var(--altura-header) - (var(--espaciado-md) * 3));
   }
 
+  .inicio .right {
+    flex: 1 1 auto;
+    max-width: 780px;
+  }
+
   .inicio__busqueda {
-    flex: 0 1 360px;
+    flex: 1 1 280px;
   }
 
   /* Grid en Main*/
   main {
     display: grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: minmax(0, 1fr) clamp(300px, 22vw, 380px);
     grid-template-areas:
       "noticias   noticias"
+      "torneos    torneos"
       "comunidad  calendario"
       "backtotop  backtotop";
     align-items: start;
@@ -928,24 +945,30 @@ footer {
     grid-area: noticias;
   }
 
+  .torneos-api {
+    grid-area: torneos;
+    margin: 0;
+  }
+
   .noticias-destacadas__contenido {
     display: grid;
-    grid-template-columns: minmax(400px, 1fr) minmax(420px, 1.2fr);
+    grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.3fr);
     gap: var(--espaciado-xl);
     align-items: center;
   }
 
   .noticias-destacadas__placeholder-img img {
-    max-height: 290px;
+    max-height: 310px;
     width: 100%;
   }
 
   .noticias-destacadas__detalles {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 480px;
-    gap: var(--espaciado-lg);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    gap: var(--espaciado-xl);
   }
 
   .noticias-destacadas__accion {
@@ -1177,17 +1200,39 @@ footer {
 /* Modo claro y oscuro */
 /* Valores para Modo Claro (cuando body NO tiene la clase .modo-oscuro) */
 body {
-  --color-fondo-principal: #f4f6fb;
+  --color-fondo-principal: #f4f0fa;
   --color-fondo-superficie: #ffffff;
   --color-fondo-tarjeta: #ffffff;
-  --color-fondo-input: #e2e8f0;
-  --color-fondo-hover: #cbd5e1;
-  --color-borde: #cbd5e1;
-  --color-borde-hover: #94a3b8;
-  --color-texto-primario: #0f172a;
-  --color-texto-secundario: #475569;
-  --gradiente-header: linear-gradient(90deg, #e2e8f0 0%, #a855f7 55%, var(--color-acento-magenta) 100%);
+  --color-fondo-input: #f3e8ff;
+  --color-fondo-hover: #e9d5ff;
+  --color-borde: #7b2cbf;
+  --color-borde-hover: #d946ef;
+  --color-texto-primario: #1e0a3c;
+  --color-texto-secundario: #5b21b6;
+  --gradiente-header: linear-gradient(90deg, #f3e8ff 0%, #a855f7 55%, var(--color-acento-magenta) 100%);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* En Modo Claro pintamos los iconos SVG blancos con el color morado de UltiHub (#7b2cbf) para que se distingan */
+body:not(.modo-oscuro) .barra-lateral__item img,
+body:not(.modo-oscuro) .meta-item img,
+body:not(.modo-oscuro) .plataformas-iconos img,
+body:not(.modo-oscuro) img.plat-icon {
+  filter: brightness(0) saturate(100%) invert(21%) sepia(85%) saturate(3640%) hue-rotate(266deg) brightness(84%) contrast(98%);
+}
+
+/* En Modo Claro también damos el tono morado de UltiHub a los iconos SVG de las tarjetas y botones */
+body:not(.modo-oscuro) .accion-btn svg,
+body:not(.modo-oscuro) .accion-stat svg {
+  color: #7b2cbf;
+}
+
+/* En Modo Oscuro restauramos los iconos SVG a su color blanco original */
+body.modo-oscuro .barra-lateral__item img,
+body.modo-oscuro .meta-item img,
+body.modo-oscuro .plataformas-iconos img,
+body.modo-oscuro img.plat-icon {
+  filter: none;
 }
 
 /* Valores para Modo Oscuro (cuando body TIENE la clase .modo-oscuro alternada con classList) */
@@ -1269,4 +1314,509 @@ body.modo-oscuro {
   border-radius: var(--radio-borde-md);
   color: var(--color-texto-secundario);
   font-size: 1.05rem;
+}
+
+
+/* Sección de torneos dinámicos (fetch, estados de carga/error y favoritos) */
+.torneos-api {
+  margin-top: var(--espaciado-xl);
+  margin-bottom: var(--espaciado-xl);
+}
+
+.torneos-api__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaciado-md);
+  margin-bottom: var(--espaciado-md);
+}
+
+.torneos-api__titulo {
+  font-size: 1.5rem;
+  color: var(--color-texto-primario);
+  margin: 0;
+}
+
+.torneos-api__controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaciado-sm);
+}
+
+.torneos-api__btn-filtro,
+.torneos-api__btn-recargar {
+  padding: 8px 14px;
+  border-radius: var(--radio-borde-md);
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-tarjeta);
+  color: var(--color-texto-primario);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.torneos-api__btn-filtro:hover,
+.torneos-api__btn-recargar:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-acento-magenta);
+}
+
+.torneos-api__btn-filtro.activo {
+  background-color: var(--color-acento-magenta);
+  border-color: var(--color-acento-magenta);
+  color: #ffffff;
+}
+
+/* Mensajes de carga y error */
+.torneos-api__estado:empty {
+  display: none;
+}
+
+.torneos-api__cargando,
+.torneos-api__error {
+  padding: var(--espaciado-lg);
+  border-radius: var(--radio-borde-md);
+  text-align: center;
+  margin-bottom: var(--espaciado-md);
+}
+
+.torneos-api__cargando {
+  background-color: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto-secundario);
+  font-weight: 600;
+}
+
+.torneos-api__error {
+  background-color: rgba(239, 68, 68, 0.12);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+.torneos-api__error p {
+  margin: 0 0 var(--espaciado-sm) 0;
+  font-weight: 600;
+}
+
+.torneos-api__btn-reintentar {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--radio-borde-sm);
+  background-color: #ef4444;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Grid de tarjetas de torneos que abarca todo el ancho disponible */
+.torneos-api__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--espaciado-md);
+  width: 100%;
+}
+
+.tarjeta-torneo {
+  background-color: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde-md);
+  padding: var(--espaciado-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--espaciado-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-torneo:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-acento-magenta);
+}
+
+.tarjeta-torneo__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaciado-sm);
+}
+
+.tarjeta-torneo__juego {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-acento-magenta);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tarjeta-torneo__badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radio-borde-full);
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.tarjeta-torneo__badge--lleno {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.tarjeta-torneo__titulo {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-texto-primario);
+}
+
+.tarjeta-torneo__detalles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--color-texto-secundario);
+}
+
+.tarjeta-torneo__acciones {
+  display: flex;
+  gap: var(--espaciado-sm);
+  margin-top: var(--espaciado-xs);
+}
+
+.tarjeta-torneo__btn-inscribir {
+  flex: 1;
+  padding: 9px 12px;
+  border: none;
+  border-radius: var(--radio-borde-sm);
+  background-color: var(--color-acento-azul);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.tarjeta-torneo__btn-inscribir:hover:not(:disabled) {
+  background-color: var(--color-acento-azul-hover);
+}
+
+.tarjeta-torneo__btn-inscribir:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.tarjeta-torneo__btn-fav {
+  padding: 9px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde-sm);
+  background-color: var(--color-fondo-input);
+  color: var(--color-texto-primario);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tarjeta-torneo__btn-fav.favorito {
+  background-color: rgba(250, 204, 21, 0.2);
+  border-color: #facc15;
+  color: #facc15;
+}
+
+
+/* Estilos personalizados de SweetAlert2 para igualar las tarjetas de video de UltiHub */
+.swal2-popup.ultihub-alerta {
+  background-color: var(--color-fondo-tarjeta) !important;
+  border: 1px solid var(--color-borde) !important;
+  border-radius: var(--radio-borde-md) !important;
+  color: var(--color-texto-primario) !important;
+  padding: var(--espaciado-lg) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45) !important;
+  font-family: inherit !important;
+}
+
+.ultihub-alerta__titulo {
+  color: var(--color-texto-primario) !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  padding: 0 !important;
+  margin-bottom: var(--espaciado-xs) !important;
+}
+
+.ultihub-alerta__texto {
+  color: var(--color-texto-secundario) !important;
+  font-size: 0.98rem !important;
+  margin: var(--espaciado-xs) 0 0 0 !important;
+}
+
+.ultihub-alerta__acciones {
+  display: flex !important;
+  gap: var(--espaciado-sm) !important;
+  margin-top: var(--espaciado-lg) !important;
+}
+
+.ultihub-alerta__btn-confirmar,
+.ultihub-alerta__btn-cancelar {
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: var(--radio-borde-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ultihub-alerta__btn-confirmar {
+  background-color: var(--color-acento-azul);
+  border: 1px solid var(--color-acento-azul);
+  color: #ffffff;
+}
+
+.ultihub-alerta__btn-confirmar:hover {
+  background-color: var(--color-acento-azul-hover);
+  border-color: var(--color-acento-magenta);
+}
+
+.ultihub-alerta__btn-cancelar {
+  background-color: var(--color-fondo-input);
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto-primario);
+}
+
+.ultihub-alerta__btn-cancelar:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-acento-magenta);
+}
+
+
+/* Estilos de la página de registro siguiendo la identidad de UltiHub */
+body.pagina-registro {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: var(--espaciado-md);
+  gap: var(--espaciado-lg);
+}
+
+.registro-header__acciones {
+  width: auto !important;
+  justify-content: flex-end;
+}
+
+.registro-btn-volver {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+main.registro-main {
+  flex: 1;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start;
+  width: 100% !important;
+  padding: var(--espaciado-sm) 0 var(--espaciado-lg);
+}
+
+.registro-card {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: var(--color-fondo-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde-lg);
+  padding: clamp(18px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-lg);
+}
+
+.registro-ayuda {
+  font-size: 0.82rem;
+  color: var(--color-texto-secundario);
+}
+
+.registro-card__encabezado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espaciado-xs);
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: var(--espaciado-md);
+}
+
+.registro-card__tag {
+  display: inline-block;
+  background-color: var(--color-acento-magenta);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: var(--radio-borde-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.registro-card__encabezado h2 {
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+  color: var(--color-texto-primario);
+  margin: 0;
+}
+
+.registro-card__encabezado p {
+  color: var(--color-texto-secundario);
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-lg);
+}
+
+.registro-form__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-md);
+}
+
+.registro-seccion {
+  background-color: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde-md);
+  padding: var(--espaciado-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-md);
+  min-width: 0;
+}
+
+.registro-seccion legend {
+  padding: 0 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-acento-magenta);
+}
+
+.registro-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.registro-campo label,
+.registro-subtitulo {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-texto-primario);
+}
+
+.registro-campo input[type="text"],
+.registro-campo input[type="number"],
+.registro-campo input[type="email"],
+.registro-campo input[type="password"],
+.registro-campo select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  background-color: var(--color-fondo-input);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde-md);
+  color: var(--color-texto-primario);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.registro-campo input::placeholder {
+  color: var(--color-texto-secundario);
+}
+
+.registro-campo input:focus,
+.registro-campo select:focus {
+  border-color: var(--color-acento-magenta);
+  box-shadow: 0 0 0 2px rgba(217, 70, 239, 0.22);
+}
+
+.registro-fila-doble {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-sm);
+}
+
+.registro-opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaciado-sm);
+}
+
+.registro-opciones--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: var(--espaciado-sm);
+}
+
+.registro-opcion {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background-color: var(--color-fondo-input);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde-sm);
+  cursor: pointer;
+  font-weight: 500 !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.registro-opcion:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-acento-magenta);
+}
+
+.registro-opcion input {
+  accent-color: var(--color-acento-magenta);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.registro-acciones {
+  display: flex;
+  justify-content: center;
+}
+
+.registro-btn-submit {
+  width: 100%;
+  max-width: 320px;
+  min-height: 48px;
+  padding: 12px 28px;
+  background-color: var(--color-acento-azul);
+  border: none;
+  border-radius: var(--radio-borde-md);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.registro-btn-submit:hover {
+  background-color: var(--color-acento-azul-hover);
+  transform: translateY(-1px);
+}
+
+@media screen and (min-width: 768px) {
+  .registro-form__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .registro-fila-doble {
+    grid-template-columns: 120px minmax(0, 1fr);
+  }
 }
